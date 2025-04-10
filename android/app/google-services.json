@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "675357988294",
+    "project_id": "qasimprofile",
+    "storage_bucket": "qasimprofile.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:675357988294:android:f0cbd6a84bc00bd3c4cec7",
+        "android_client_info": {
+          "package_name": "com.example.qasim_profile_info"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "675357988294-159bl1317q54ijg3vsmmhguha6sv964q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.qasim_profile_info",
+            "certificate_hash": "f0ed1d1330852f0949722462dc19846bf0008d0f"
+          }
+        },
+        {
+          "client_id": "675357988294-lafi03tnj0kuvg8jhptb1k4270ln2r8b.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDB-TrdnntSw4YyqZ46vDtBAwqItFJkwuU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "675357988294-lafi03tnj0kuvg8jhptb1k4270ln2r8b.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "675357988294-djco9ob9bukc490du7sjcbh4uk7kc7p1.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.qasimProfileInfo"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
