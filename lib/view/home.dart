@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   MyLocalController myLocalController = Get.find();
-  HomeController homeController = Get.put(HomeController());
+  HomeController homeController = Get.find();
   @override
   Widget build(BuildContext context) {
     // HomeController homeCont = Get.find();

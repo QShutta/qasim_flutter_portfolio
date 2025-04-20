@@ -2,6 +2,7 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/main.dart';
+import 'package:qasim_profile_info/view/developer_info.dart';
 import 'package:qasim_profile_info/view/home.dart';
 
 class SignInController extends GetxController {
@@ -52,7 +53,7 @@ class SignInController extends GetxController {
         );
 
         await sharePref!.setString("id", "1");
-        Get.offAll(HomePage());
+        Get.offAll(DevloperInfo());
       } on FirebaseAuthException catch (e) {
         String errorMessage = "An unknown error occurred.";
 

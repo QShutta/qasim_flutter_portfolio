@@ -14,7 +14,7 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  SignUpController signUpController = Get.put(SignUpController());
+  SignUpController signUpController = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(

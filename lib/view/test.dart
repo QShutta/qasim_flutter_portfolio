@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:qasim_profile_info/view/head_title.dart';
+import 'package:qasim_profile_info/widgets/head_title.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/header_section.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/projects_page_link.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/skills.dart';

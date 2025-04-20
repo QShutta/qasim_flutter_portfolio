@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/controller/dev_info_controller.dart';
 import 'package:qasim_profile_info/main.dart';
-import 'package:qasim_profile_info/view/head_title.dart';
+import 'package:qasim_profile_info/widgets/head_title.dart';
 import 'package:qasim_profile_info/view/welcome.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/change_lang_button.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/header_section.dart';
@@ -21,7 +21,7 @@ class DevloperInfo extends StatefulWidget {
 }
 
 class _DevloperInfoState extends State<DevloperInfo> {
-  DevInfoController devCont = Get.put(DevInfoController());
+  DevInfoController devCont = Get.find();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
