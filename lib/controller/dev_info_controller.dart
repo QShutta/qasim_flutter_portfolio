@@ -2,15 +2,33 @@ import 'dart:ui';
 
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/core/themes/themes.dart';
-import 'package:qasim_profile_info/main.dart';
+
+import 'package:qasim_profile_info/services/settings_services.dart';
 
 class DevInfoController extends GetxController {
   var count1 = 0.obs; // تعريف متغير ملاحظ (Observable) لتتبع عدد معين
-
+  final SettingsServices settingsServices = Get.find<SettingsServices>();
   // تعريف متغير
   //isDark
   // لمراقبة حالة الثيم (مظلم أو فاتح)
-  var isDark = (sharePref?.getBool("dark") ?? false).obs;
+  late RxBool isDark;
+  late Locale initalLang;
+  @override
+  void onInit() {
+    super.onInit();
+
+    // متغير لتحديد اللغة الافتراضية للتطبيق
+    initalLang =
+        settingsServices.sharePref!.getString("lang") ==
+                null // التحقق مما إذا كان هناك لغة محفوظة في التخزين المحلي
+            ? Get
+                .deviceLocale! // إذا لم تكن هناك لغة محفوظة، يتم استخدام لغة الجهاز الافتراضية
+            : Locale(
+              "${settingsServices.sharePref!.getString("lang")}",
+            ); // إذا كانت هناك لغة محفوظة، يتم استرجاعها واستخدامها
+
+    isDark = (settingsServices.sharePref?.getBool("dark") ?? false).obs;
+  }
 
   // changeTheme: دالة تقوم بتغيير الثيم بين الوضع الفاتح والمظلم
   changeTheme() {
@@ -20,7 +38,7 @@ class DevInfoController extends GetxController {
     Get.changeTheme(isDark.value ? Thems.darkTheme : Thems.lightTheme);
 
     // حفظ الحالة الجديدة في SharedPreferences لضمان الاحتفاظ بالثيم بعد إعادة تشغيل التطبيق
-    sharePref!.setBool("dark", isDark.value);
+    settingsServices.sharePref!.setBool("dark", isDark.value);
   }
 
   // inc1: دالة لزيادة قيمة count1
@@ -28,19 +46,9 @@ class DevInfoController extends GetxController {
     count1.value++; // زيادة المتغير بمقدار 1
   }
 
-  // متغير لتحديد اللغة الافتراضية للتطبيق
-  Locale initalLang =
-      sharePref!.getString("lang") ==
-              null // التحقق مما إذا كان هناك لغة محفوظة في التخزين المحلي
-          ? Get
-              .deviceLocale! // إذا لم تكن هناك لغة محفوظة، يتم استخدام لغة الجهاز الافتراضية
-          : Locale(
-            "${sharePref!.getString("lang")}",
-          ); // إذا كانت هناك لغة محفوظة، يتم استرجاعها واستخدامها
-
   void changeLang(String langCode) {
     Locale locale = Locale(langCode);
-    sharePref!.setString("lang", langCode);
+    settingsServices.sharePref!.setString("lang", langCode);
     Get.updateLocale(locale);
   }
 }

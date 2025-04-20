@@ -3,12 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/controller/welcome_contrlloer.dart';
-import 'package:qasim_profile_info/main.dart';
+import 'package:qasim_profile_info/services/settings_services.dart';
 import 'package:qasim_profile_info/view/developer_info.dart';
 
 class SocialMediaSignIn extends StatelessWidget {
   SocialMediaSignIn({super.key});
   final WelcomeContrlloer welcomeContrlloer = Get.find();
+  final SettingsServices settingsServices = Get.find();
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -33,7 +34,10 @@ class SocialMediaSignIn extends StatelessWidget {
 
                         UserCredential user =
                             await welcomeContrlloer.signInWithGoogle();
-                        sharePref!.setString("id", user.user!.uid);
+                        settingsServices.sharePref!.setString(
+                          "id",
+                          user.user!.uid,
+                        );
                         Get.offAll(DevloperInfo());
                       } catch (e) {
                         print(e);

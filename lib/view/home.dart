@@ -4,6 +4,7 @@ import 'package:qasim_profile_info/controller/home_controller.dart';
 import 'package:qasim_profile_info/controller/my_local_controller.dart';
 import 'package:qasim_profile_info/main.dart';
 import 'package:qasim_profile_info/secound_test_page.dart';
+import 'package:qasim_profile_info/services/settings_services.dart';
 import 'package:qasim_profile_info/view/developer_info.dart';
 import 'package:qasim_profile_info/view/welcome.dart';
 
@@ -20,6 +21,7 @@ class _HomePageState extends State<HomePage> {
     super.initState();
   }
 
+  final SettingsServices settingsServices = Get.find();
   MyLocalController myLocalController = Get.find();
   HomeController homeController = Get.find();
   @override
@@ -50,7 +52,7 @@ class _HomePageState extends State<HomePage> {
           IconButton(
             onPressed: () {
               Get.offAll(() => Welcome());
-              sharePref!.clear();
+              settingsServices.sharePref!.clear();
             },
             icon: Icon(Icons.exit_to_app),
           ),
@@ -61,7 +63,8 @@ class _HomePageState extends State<HomePage> {
               // إذا لم تكن هناك لغة محفوظة، سيتم تعيين
               //"en"
               //(الإنجليزية) كافتراضية
-              String currentLang = sharePref?.getString("lang") ?? "en";
+              String currentLang =
+                  settingsServices.sharePref?.getString("lang") ?? "en";
 
               // التحقق من اللغة الحالية وتحديد اللغة الجديدة
               // إذا كانت اللغة الحالية

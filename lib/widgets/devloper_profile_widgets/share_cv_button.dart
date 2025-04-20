@@ -1,16 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qasim_profile_info/main.dart';
+import 'package:qasim_profile_info/services/settings_services.dart';
 import 'package:share_plus/share_plus.dart';
 
 class ShareCvButton extends StatelessWidget {
-  const ShareCvButton({super.key});
+  ShareCvButton({super.key});
 
+  final SettingsServices settingsServices = Get.find();
   @override
   Widget build(BuildContext context) {
     return SizedBox(
       // width: 300,
-      width: sharePref!.getString("lang") == "ar" ? 300 : 200,
+      width: settingsServices.sharePref!.getString("lang") == "ar" ? 300 : 200,
       height: 50,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(

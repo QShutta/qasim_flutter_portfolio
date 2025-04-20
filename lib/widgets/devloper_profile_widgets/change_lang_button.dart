@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/controller/dev_info_controller.dart';
-import 'package:qasim_profile_info/main.dart';
+import 'package:qasim_profile_info/services/settings_services.dart';
 
 class ChangeLangButton extends StatelessWidget {
   ChangeLangButton({super.key});
   final DevInfoController devCont = Get.find();
+  final SettingsServices settingsServices = Get.find();
   @override
   Widget build(BuildContext context) {
     return IconButton(
@@ -15,7 +16,8 @@ class ChangeLangButton extends StatelessWidget {
         // إذا لم تكن هناك لغة محفوظة، سيتم تعيين
         //"en"
         //(الإنجليزية) كافتراضية
-        String currentLang = sharePref?.getString("lang") ?? "en";
+        String currentLang =
+            settingsServices.sharePref?.getString("lang") ?? "en";
 
         // التحقق من اللغة الحالية وتحديد اللغة الجديدة
         // إذا كانت اللغة الحالية

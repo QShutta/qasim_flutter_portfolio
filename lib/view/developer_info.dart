@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/controller/dev_info_controller.dart';
-import 'package:qasim_profile_info/main.dart';
+import 'package:qasim_profile_info/services/settings_services.dart';
 import 'package:qasim_profile_info/widgets/head_title.dart';
 import 'package:qasim_profile_info/view/welcome.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/change_lang_button.dart';
@@ -22,6 +22,7 @@ class DevloperInfo extends StatefulWidget {
 
 class _DevloperInfoState extends State<DevloperInfo> {
   DevInfoController devCont = Get.find();
+  final SettingsServices? settingsServices = Get.find<SettingsServices>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +30,7 @@ class _DevloperInfoState extends State<DevloperInfo> {
         leading: IconButton(
           onPressed: () {
             Get.offAll(() => Welcome());
-            sharePref!.clear();
+            settingsServices?.sharePref!.clear();
           },
           icon: Icon(Icons.exit_to_app),
         ),
