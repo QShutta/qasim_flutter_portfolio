@@ -5,6 +5,7 @@ import 'package:get_storage/get_storage.dart';
 
 GetStorage? box;
 void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
   await initServices();
   runApp(MyApp());
 }

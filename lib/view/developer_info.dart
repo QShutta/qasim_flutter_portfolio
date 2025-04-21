@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:qasim_profile_info/controller/dev_info_controller.dart';
-import 'package:qasim_profile_info/services/settings_services.dart';
+import 'package:qasim_profile_info/widgets/devloper_profile_widgets/contact_info.dart';
+import 'package:qasim_profile_info/widgets/devloper_profile_widgets/contact_info_text.dart';
+import 'package:qasim_profile_info/widgets/devloper_profile_widgets/developer_info_app_bar.dart';
 import 'package:qasim_profile_info/widgets/head_title.dart';
-import 'package:qasim_profile_info/view/welcome.dart';
-import 'package:qasim_profile_info/widgets/devloper_profile_widgets/change_lang_button.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/header_section.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/projects_page_link.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/share_cv_button.dart';
@@ -21,30 +20,10 @@ class DevloperInfo extends StatefulWidget {
 }
 
 class _DevloperInfoState extends State<DevloperInfo> {
-  DevInfoController devCont = Get.find();
-  final SettingsServices? settingsServices = Get.find<SettingsServices>();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        leading: IconButton(
-          onPressed: () {
-            Get.offAll(() => Welcome());
-            settingsServices?.sharePref!.clear();
-          },
-          icon: Icon(Icons.exit_to_app),
-        ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              devCont.changeTheme();
-            },
-            icon: Icon(Icons.dark_mode_outlined),
-          ),
-
-          ChangeLangButton(),
-        ],
-      ),
+      appBar: DeveloperInfoAppBar(),
       body: Container(
         color: Theme.of(context).scaffoldBackgroundColor, // استخدم لون الثيم
         child: SingleChildScrollView(
@@ -82,6 +61,8 @@ class _DevloperInfoState extends State<DevloperInfo> {
               SizedBox(height: 20),
               ShareCvButton(),
               SizedBox(height: 20),
+              ContactInfoText(),
+              ContactInfo(),
             ],
           ),
         ),

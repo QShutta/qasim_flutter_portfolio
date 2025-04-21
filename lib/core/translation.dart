@@ -41,6 +41,11 @@ class MyLocal implements Translations {
       "29": "المشاريع",
       "30": "العرض على GitHub",
       "31": "مشاركة السيرة الذاتية",
+      "32": "معلومات الإتصال",
+      "33": "فتح بروفايل فيسبوك",
+      "34": "فتح بروفايل لينكدن",
+      "35": "فتح بروفايل جت هب",
+      "36": "السودان، الخرطوم",
     },
     "en": {
       "1": "WELCOME BACK",
@@ -93,6 +98,11 @@ To use the app, download the source code from GitHub, open it in Flutter, and ru
       "29": "Projects",
       "30": "View on GitHub",
       "31": "Share Cv",
+      "32": "Contact Information",
+      "33": "Open Facebook profile",
+      "34": "Open LinkedIn profile",
+      "35": "Open GitHub profile",
+      "36": "Sudan,Khartoum",
     },
   };
 }
