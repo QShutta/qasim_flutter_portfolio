@@ -23,7 +23,7 @@ class _SignUpState extends State<SignUp> {
           SingleChildScrollView(
             child: Column(
               children: [
-                HeaderSection(headerText: "4".tr),
+                HeaderSection(headerText: "3".tr),
                 SizedBox(height: 80),
                 SignUPForm(),
                 SizedBox(height: 50),

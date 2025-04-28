@@ -53,58 +53,62 @@ class SignUPForm extends StatelessWidget {
               ),
             ),
           ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
-            child: TextFormField(
-              focusNode: signUpController.passwordFocus.value,
-              onFieldSubmitted: (value) {
-                FocusScope.of(
-                  context,
-                ).requestFocus(signUpController.confirmPasswordFocus.value);
-              },
-              validator: (value) {
-                return signUpController.passwordValidator(value!);
-              },
-              keyboardType: TextInputType.emailAddress,
-              controller: signUpController.passwordController.value,
-              obscureText: signUpController.obSecureValue.value,
-              decoration: InputDecoration(
-                hintText: "8".tr,
-                prefixIcon: Icon(Icons.lock_outline_rounded),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    signUpController.obSecureValue.value =
-                        signUpController.obSecureValue.value;
-                  },
-                  icon: Icon(Icons.remove_red_eye),
+          Obx(() {
+            return Container(
+              margin: EdgeInsets.only(left: 30, right: 30, top: 10, bottom: 10),
+              child: TextFormField(
+                focusNode: signUpController.passwordFocus.value,
+                onFieldSubmitted: (value) {
+                  FocusScope.of(
+                    context,
+                  ).requestFocus(signUpController.confirmPasswordFocus.value);
+                },
+                validator: (value) {
+                  return signUpController.passwordValidator(value!);
+                },
+                keyboardType: TextInputType.emailAddress,
+                controller: signUpController.passwordController.value,
+                obscureText: signUpController.obSecureValue.value,
+                decoration: InputDecoration(
+                  hintText: "8".tr,
+                  prefixIcon: Icon(Icons.lock_outline_rounded),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      signUpController.obSecureValue.value =
+                          !signUpController.obSecureValue.value;
+                    },
+                    icon: Icon(Icons.remove_red_eye),
+                  ),
                 ),
               ),
-            ),
-          ),
-          Container(
-            margin: EdgeInsets.only(left: 30, right: 30, top: 10),
-            child: TextFormField(
-              obscureText: signUpController.obSecureValue.value,
+            );
+          }),
+          Obx(() {
+            return Container(
+              margin: EdgeInsets.only(left: 30, right: 30, top: 10),
+              child: TextFormField(
+                obscureText: signUpController.obSecureValue.value,
 
-              focusNode: signUpController.confirmPasswordFocus.value,
-              validator: (value) {
-                return signUpController.passwordValidator(value!);
-              },
-              keyboardType: TextInputType.emailAddress,
-              controller: signUpController.confirmPasswordController.value,
-              decoration: InputDecoration(
-                hintText: "9".tr,
-                prefixIcon: Icon(Icons.lock_outline_rounded),
-                suffixIcon: IconButton(
-                  onPressed: () {
-                    signUpController.obSecureValue.value =
-                        !signUpController.obSecureValue.value;
-                  },
-                  icon: Icon(Icons.remove_red_eye),
+                focusNode: signUpController.confirmPasswordFocus.value,
+                validator: (value) {
+                  return signUpController.passwordValidator(value!);
+                },
+                keyboardType: TextInputType.emailAddress,
+                controller: signUpController.confirmPasswordController.value,
+                decoration: InputDecoration(
+                  hintText: "9".tr,
+                  prefixIcon: Icon(Icons.lock_outline_rounded),
+                  suffixIcon: IconButton(
+                    onPressed: () {
+                      signUpController.obSecureValue.value =
+                          !signUpController.obSecureValue.value;
+                    },
+                    icon: Icon(Icons.remove_red_eye),
+                  ),
                 ),
               ),
-            ),
-          ),
+            );
+          }),
 
           SizedBox(height: 50),
           SizedBox(
