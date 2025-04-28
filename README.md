@@ -29,29 +29,11 @@ It includes information about me, my projects, and how to contact me.
 
 ## 📸 Screenshots
 
-### Welcome Page
-![Welcome](assets/project_screenshot/welcome.png)
-
-### Sign In Page
-![Sign In](assets/project_screenshot/signin.png)
-
-### Developer Info Page
-![Developer Info](assets/project_screenshot/devInfo.png)
-
-### Developer Info (More Details)
-![Developer Info 2](assets/project_screenshot/devInfo2.png)
-
-### Projects Page 1
-![Projects 1](assets/project_screenshot/projects1.png)
-
-### Projects Page 2
-![Projects 2](assets/project_screenshot/projects2.png)
-
-### Projects Page 3
-![Projects 3](assets/project_screenshot/projects3.png)
-
-### Dark Theme Mode
-![Dark Theme](assets/project_screenshot/darkTheme.png)
+| | | |
+|:-:|:-:|:-:|
+| ![Welcome](assets/project_screenshot/welcome.png) | ![Sign In](assets/project_screenshot/signin.png) | ![Developer Info](assets/project_screenshot/devInfo.png) |
+| ![Developer Info 2](assets/project_screenshot/devInfo2.png) | ![Projects 1](assets/project_screenshot/projects1.png) | ![Projects 2](assets/project_screenshot/projects2.png) |
+| ![Projects 3](assets/project_screenshot/projects3.png) | ![Dark Theme](assets/project_screenshot/darkTheme.png) | |
 
 ## 🔧 Getting Started
 
