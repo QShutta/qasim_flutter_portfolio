@@ -1,4 +1,3 @@
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qasim_profile_info/controller/sign_up_controller.dart';
@@ -99,7 +98,7 @@ class SignUPForm extends StatelessWidget {
                 suffixIcon: IconButton(
                   onPressed: () {
                     signUpController.obSecureValue.value =
-                        signUpController.obSecureValue.value;
+                        !signUpController.obSecureValue.value;
                   },
                   icon: Icon(Icons.remove_red_eye),
                 ),
@@ -115,113 +114,7 @@ class SignUPForm extends StatelessWidget {
                   signUpController.isLoading.value
                       ? null
                       : () async {
-                        if (signUpController.formKey.value.currentState!
-                            .validate()) {
-                          //Complete from here..
-                          //If the user enter a valid name,passowrd,email
-                          //In the future will connect our app with a backend.
-                          //and there is a check process will happen here.
-                          //If all of the things are good will move to the sign in page.
-                          try {
-                            signUpController.isLoading.value = true;
-
-                            final credential = await FirebaseAuth.instance
-                                .createUserWithEmailAndPassword(
-                                  email:
-                                      signUpController
-                                          .emailController
-                                          .value
-                                          .text,
-                                  password:
-                                      signUpController
-                                          .passwordController
-                                          .value
-                                          .text,
-                                );
-                            print("Before of the Get.back line");
-                            // Get.offAll(() => Welcome());
-                            //Why did we hvae tow Get.back?
-                            //One to discard from the alertDialog,and the secound one is to return
-                            //Back from the current page to the prevoius page.
-                            Get.back();
-                            Get.back();
-
-                            print("After the Get.back line...");
-                            print(
-                              "------------------------------------------------",
-                            );
-                            print("You'r credantial is :$credential");
-                            print(
-                              "------------------------------------------------",
-                            );
-                          } on FirebaseAuthException catch (e) {
-                            if (e.code == 'weak-password') {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    icon: Icon(
-                                      color: Colors.red,
-                                      Icons.error_outline_outlined,
-                                      size: 40.0,
-                                    ),
-                                    title: Text("Error"),
-                                    actions: [
-                                      Text(
-                                        textAlign: TextAlign.center,
-                                        "The password provided is too weak.",
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            } else if (e.code == 'email-already-in-use') {
-                              showDialog(
-                                context: context,
-                                builder: (context) {
-                                  return AlertDialog(
-                                    icon: Icon(
-                                      color: Colors.red,
-                                      Icons.error_outline_outlined,
-                                      size: 40.0,
-                                    ),
-                                    title: Text("Error"),
-                                    actions: [
-                                      Text(
-                                        textAlign: TextAlign.center,
-
-                                        "The account already exists for that email",
-                                      ),
-                                    ],
-                                  );
-                                },
-                              );
-                            }
-                          } catch (e) {
-                            print(e);
-                            showDialog(
-                              context: context,
-                              builder: (context) {
-                                return AlertDialog(
-                                  icon: Icon(
-                                    color: Colors.red,
-                                    Icons.error_outline_outlined,
-                                    size: 40.0,
-                                  ),
-                                  title: Text("Error"),
-                                  actions: [
-                                    Text(
-                                      textAlign: TextAlign.center,
-                                      "The error is :$e",
-                                    ),
-                                  ],
-                                );
-                              },
-                            );
-                          } finally {
-                            signUpController.isLoading.value = false;
-                          }
-                        }
+                        await signUpController.signup(context);
                       },
               style: ElevatedButton.styleFrom(
                 backgroundColor: Color(0xff0FA4DC),
