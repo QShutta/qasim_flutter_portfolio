@@ -1,28 +1,11 @@
-<<<<<<< HEAD
-# qasim_profile_info
-
-A new Flutter project.
-
-## Getting Started
-
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-=======
 # qasim_flutter_portfolio
 
 A simple Flutter portfolio app to showcase my projects, skills, and experience as a mobile developer.
 
 ## 📱 About the Project
 
-This app is designed to present my profile in a clean and professional way using Flutter. It includes information about me, my projects, and how to contact me.
+This app is designed to present my profile in a clean and professional way using Flutter.  
+It includes information about me, my projects, and how to contact me.
 
 ## 🚀 Features
 
@@ -30,25 +13,52 @@ This app is designed to present my profile in a clean and professional way using
 - Responsive design
 - Projects section with details
 - Contact section
-- Built fully with Flutter
+- Language switcher (Arabic / English)
+- Dark Mode and Light Mode support
+- Sign in with Google
+- Sign out feature
 
 ## 🛠️ Tech Stack
 
 - **Flutter**
 - **Dart**
-- **GetX** for state management, routing, and dependency injection
+- **GetX** (State management, routing, dependency injection)
+- **Firebase**
+- **Git & GitHub**
+- **Shared Preferences**
 
 ## 📸 Screenshots
 
-(Add screenshots of your app here if available)
+### Welcome Page
+![Welcome](assets/project_screenshot/welcome.png)
+
+### Sign In Page
+![Sign In](assets/project_screenshot/signin.png)
+
+### Developer Info Page
+![Developer Info](assets/project_screenshot/devInfo.png)
+
+### Developer Info (More Details)
+![Developer Info 2](assets/project_screenshot/devInfo2.png)
+
+### Projects Page 1
+![Projects 1](assets/project_screenshot/projects1.png)
+
+### Projects Page 2
+![Projects 2](assets/project_screenshot/projects2.png)
+
+### Projects Page 3
+![Projects 3](assets/project_screenshot/projects3.png)
+
+### Dark Theme Mode
+![Dark Theme](assets/project_screenshot/darkTheme.png)
 
 ## 🔧 Getting Started
 
 To run the app locally:
 
 ```bash
-git clone https://github.com/your-username/qasim_flutter_portfolio.git
+git clone https://github.com/QShutta/qasim_flutter_portfolio.git
 cd qasim_flutter_portfolio
 flutter pub get
 flutter run
->>>>>>> d60ba2398683404455b54224585ea74692147467
