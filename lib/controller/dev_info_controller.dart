@@ -37,7 +37,9 @@ class DevInfoController extends GetxController {
     // تحديث الثيم في التطبيق بناءً على قيمة isDark
     Get.changeTheme(isDark.value ? Thems.darkTheme : Thems.lightTheme);
 
-    // حفظ الحالة الجديدة في SharedPreferences لضمان الاحتفاظ بالثيم بعد إعادة تشغيل التطبيق
+    // حفظ الحالة الجديدة في
+    //SharedPreferences
+    //لضمان الاحتفاظ بالثيم بعد إعادة تشغيل التطبيق
     settingsServices.sharePref!.setBool("dark", isDark.value);
   }
 

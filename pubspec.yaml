@@ -34,6 +34,7 @@ dependencies:
   firebase_core: ^3.12.1
   flutter:
     sdk: flutter
+  flutter_native_splash: ^2.4.6
   flutter_svg: ^2.0.17
   font_awesome_flutter: ^10.8.0
   get: ^4.7.2
@@ -47,6 +48,23 @@ dev_dependencies:
   flutter_lints: ^5.0.0
   flutter_test:
     sdk: flutter
+
+
+    
+# flutter_native_splash:
+#   color: "#42a5f5"
+#   image: assets/images/splash.png
+#   android_gravity: fill
+#   background_image: "assets/images/splash.png"
+#   android: true
+#   ios: true
+#   android_12:
+#     # icon_background_color: "#42a5f5"
+#     image: assets/images/splash.png
+#     android_gravity: fill
+
+
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
@@ -62,9 +80,12 @@ flutter:
   assets:
     - assets/my_prefere.jpg
     - assets/sign_in.png
+    - assets/splash/splash.png
+    - assets/splash/an12.png
     - assets/getx.svg
     - assets/api_logo.png
     - assets/q_a_app.png
+    - assets/test_splash.png
     - assets/note_taking_app.png
     - assets/news_app.png
   #   - images/a_dot_ham.jpeg

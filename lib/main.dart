@@ -7,5 +7,6 @@ GetStorage? box;
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initServices();
+
   runApp(MyApp());
 }

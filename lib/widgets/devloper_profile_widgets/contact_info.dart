@@ -25,7 +25,7 @@ class ContactInfo extends StatelessWidget {
                   //(LTR)
                   // حتى لو لغة التطبيق عربية
                   //RTL،
-                  // لأن الأرقام بتتبهدل لو اتعرضت من اليمين
+                  // لأن الأرقام شكلها بكون غير مقروء لو ما عملنا كدة
                   Directionality(
                     textDirection: TextDirection.ltr,
                     child: Text(

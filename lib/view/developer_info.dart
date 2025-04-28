@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/contact_info.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/contact_info_text.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/developer_info_app_bar.dart';
+import 'package:qasim_profile_info/widgets/devloper_profile_widgets/skills_text.dart';
 import 'package:qasim_profile_info/widgets/head_title.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/header_section.dart';
 import 'package:qasim_profile_info/widgets/devloper_profile_widgets/projects_page_link.dart';
@@ -35,21 +35,7 @@ class _DevloperInfoState extends State<DevloperInfo> {
               SizedBox(height: 10),
               Subtitle(),
               SizedBox(height: 20),
-              Container(
-                margin: EdgeInsets.only(left: 20, right: 20),
-                width: double.infinity,
-                child: Text(
-                  "28".tr,
-                  textAlign: TextAlign.start,
-                  style: TextStyle(
-                    fontSize: 22,
-                    fontWeight: FontWeight.bold,
-                    // color: Colors.black87,
-                    color: Theme.of(context).textTheme.bodyLarge!.color,
-                    letterSpacing: 1.2,
-                  ),
-                ),
-              ),
+              SkillsText(),
               //دة بمثل الصف الاول من المهارات الموجودة في صفحة المهارات
               SkillsWidget1(),
               //دة بمثل الصف الثناي من المهارات الموجودة في صفحة المهارات
